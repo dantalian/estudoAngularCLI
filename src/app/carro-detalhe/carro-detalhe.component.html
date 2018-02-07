@@ -1,0 +1,14 @@
+<div *ngIf="carro">
+
+  <h2>{{ carro.modelo | uppercase }} Detalhes</h2>
+  <div><span>Marca: </span>{{carro.marca}}</div>
+  <div><span>Combustivel: </span>{{carro.combustivel}}</div>
+  <div><span>Placa: </span>{{carro.placa}}</div>
+  <div><span>Imagem: </span><a href="{{carro.imagem}}">{{carro.imagem}}</a></div>
+  <div>
+    <label>Modelo:
+      <input [(ngModel)]="carro.modelo" placeholder="name">
+    </label>
+  </div>
+
+</div>
