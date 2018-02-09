@@ -19,10 +19,6 @@ export class CarrosComponent implements OnInit {
     this.getCarros();
   }
 
-  onSelect(carro: Carro): void {
-    this.selectedCarro = carro;
-  }
-
   getCarros(): void {
     this.carroService.getCarros()
       .subscribe(carros => this.carros = carros);

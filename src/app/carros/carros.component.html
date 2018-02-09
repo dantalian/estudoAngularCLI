@@ -1,10 +1,32 @@
-<h2>Carros</h2>
-<ul class="carros">
-  <li *ngFor="let carro of carros"
-      [class.selected]="carro === selectedCarro"
-      (click)="onSelect(carro)">
-    <span class="badge">{{carro.marca}}</span> {{carro.modelo}}
-  </li>
-</ul>
-<app-carro-detalhe [carro]="selectedCarro"></app-carro-detalhe>
-
+<div class="row">
+  <button type="button" class="btn btn-success">Novo Carro</button>
+  <button type="button" class="btn btn-danger">Excluir Novo</button>
+  <input class="" type="search" placeholder="Pesquisar"/>
+  <button type="button"><i class="material-icons">search</i></button>
+</div>
+<div>
+  <table class="table table-bordered">
+    <thead>
+    <tr class="bg-lightblue">
+      <th scope="col"><input type="checkbox" class=""/></th>
+      <th scope="col">Placa</th>
+      <th scope="col">Modelo</th>
+      <th scope="col">Marca</th>
+      <th scope="col">Combustivel</th>
+      <th scope="col">Imagem</th>
+      <th scope="col">Valor</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let carro of carros">
+      <td><input type="checkbox" class=""/></td>
+      <td>{{carro.placa}}</td>
+      <td>{{carro.modelo}}</td>
+      <td>{{carro.marca}}</td>
+      <td>{{carro.combustivel}}</td>
+      <td><a href="{{carro.imagem}}">{{carro.imagem}}</a></td>
+      <td>{{carro.valor | number:'2.2-2'}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

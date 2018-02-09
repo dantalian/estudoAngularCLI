@@ -8,8 +8,8 @@ export class MessageService {
     this.messages.push(msg);
   }
 
-  clear() {
-    this.messages = [];
+  delete(msg: string) {
+    this.messages.splice(this.messages.indexOf(msg), 1);
   }
 
 }

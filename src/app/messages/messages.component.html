@@ -1,7 +1,7 @@
 <div *ngIf="messageService.messages.length">
-
-  <h2>Mensagens</h2>
-  <div *ngFor='let message of messageService.messages'> {{message}} </div>
-  <button class="clear" (click)="messageService.clear()">Limpar</button>
-
+  <div *ngFor='let message of messageService.messages' class="alert alert-success" role="alert"> {{message}}
+    <button class="close" (click)="messageService.delete(message)" aria-label="Apagar Messagem">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
 </div>
